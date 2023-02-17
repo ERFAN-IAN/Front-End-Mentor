@@ -1,6 +1,14 @@
 *,*::after,*::before{
     box-sizing: border-box;
 }
+:root{
+    --mobile: 86px;
+    --mobiles: 43px;
+    --mobilen: 120px;
+    --mobilens: 60px;
+    --mobilem: 160px;
+    --mobilems: 80px;
+}
 body{
     display: flex;
     justify-content: center;
@@ -25,6 +33,9 @@ html{
     transform-style: preserve-3d;
     perspective: 800xp;
     
+}
+section{
+    width: min(38rem,99%);
 }
 .seconds{
     animation-duration: 2000ms;
@@ -72,4 +83,82 @@ html{
     to{
         transform: rotateX(-360deg);
     }
+}
+@media screen and (max-width: 380px){
+    body{
+        font-size: 3rem;
+    }
+    .cube{
+        width: var(--mobile);
+        height: var(--mobile);
+    }
+    .face{
+        width: var(--mobile);
+        height: var(--mobile);
+    }
+    .front{
+        transform: rotateY(  0deg) translateZ(var(--mobiles));
+    }
+    .back{
+        transform: rotateY(180deg) translateZ(var(--mobiles));
+    }
+    .top{
+        transform: rotateX(-90deg) translateZ(var(--mobiles));
+    }
+    .bottom{
+        transform: rotateX(90deg) translateZ(var(--mobiles));
+    }
+    
+}
+@media screen and (min-width: 380px) and (max-width:500px){
+    body{
+        font-size: 5rem;
+    }
+    .cube{
+        width: var(--mobilen);
+        height: var(--mobilen);
+    }
+    .face{
+        width: var(--mobilen);
+        height: var(--mobilen);
+    }
+    .front{
+        transform: rotateY(  0deg) translateZ(var(--mobilens));
+    }
+    .back{
+        transform: rotateY(180deg) translateZ(var(--mobilens));
+    }
+    .top{
+        transform: rotateX(-90deg) translateZ(var(--mobilns));
+    }
+    .bottom{
+        transform: rotateX(90deg) translateZ(var(--mobilens));
+    }
+    
+}
+@media screen and (min-width: 500px) and (max-width:700px){
+    body{
+        font-size: 7rem;
+    }
+    .cube{
+        width: var(--mobilem);
+        height: var(--mobilem);
+    }
+    .face{
+        width: var(--mobilem);
+        height: var(--mobilem);
+    }
+    .front{
+        transform: rotateY(  0deg) translateZ(var(--mobilems));
+    }
+    .back{
+        transform: rotateY(180deg) translateZ(var(--mobilems));
+    }
+    .top{
+        transform: rotateX(-90deg) translateZ(var(--mobilms));
+    }
+    .bottom{
+        transform: rotateX(90deg) translateZ(var(--mobilems));
+    }
+    
 }
