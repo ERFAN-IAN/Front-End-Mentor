@@ -25,6 +25,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap:5px;
 }
 .cube{
     width: 200px;
@@ -32,14 +33,15 @@ html{
     position: relative;
     transform-style: preserve-3d;
     perspective: 800xp;
-    
+    border: none;
 }
 section{
     width: min(38rem,99%);
 }
 .seconds{
     animation-duration: 2000ms;
-    animation-delay: 700ms;
+    /* 700ms works fine on chrome, firefox needs 200ms, i used javascript to change it for firefox */
+    animation-delay: 200ms;
     animation-iteration-count: infinite;
 }
 .face{

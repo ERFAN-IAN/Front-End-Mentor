@@ -16,8 +16,6 @@ function setTime(){
     backSecond.textContent=second;
     fronthour.textContent=hour;
     frontMinute.textContent=minute;
-    console.log(helperm)
-    console.log(minute)
     let animationMinute = document.querySelector('.minutes');
     let animationHour = document.querySelector('.hours');
     if (helperm!=minute && helperm!=0){
@@ -36,6 +34,10 @@ function setTime(){
     helperm=minute
 
 }
+if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+        rotateS.style.animationDelay="200ms"
+    }
 function color(){
     let color = document.querySelectorAll('.face');
     for(let i=0;i<color.length;i++){
