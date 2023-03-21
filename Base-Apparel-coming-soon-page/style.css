@@ -1,0 +1,217 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #FFF6F7;
+}
+.mlogo{
+    width: 10rem;
+    padding: 2rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90rem;
+}
+.right{
+    order: 1;
+}
+.left{
+    order: 2;
+}
+span{
+    display:block;
+    font-size: 2.5rem;
+    text-align: center;
+}
+#we{
+    font-weight: 300;
+    color:hsl(0, 36%, 70%);
+    margin-top: 4rem;
+}
+p{
+    color:hsl(0, 36%, 70%);
+    margin-bottom: 1.5rem;
+    line-height: 1.5rem;
+}
+.pf{
+    margin-top: 1rem;
+    padding-inline: 2.3rem;
+    font-size:14px;
+    text-align: center;
+}
+.form{
+  position: relative;
+  display: flex;
+}
+#email{ 
+  border:2px solid #DBCBCC;
+  background-color: #FFF6F7;
+  color: hsl(0, 36%, 70%);
+  outline: none;
+  border-radius: 2rem;
+  padding-block:1rem;
+  padding-left:1rem;
+  width: 100%;
+}
+::placeholder {
+  color: hsl(0, 36%, 70%);
+  opacity: 1;
+}
+button{
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient( 135deg,hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 1.5rem;
+    border:none;
+    width: 4rem;
+    height: 100%;
+    cursor: pointer;
+    transition: all 200ms;
+}
+button:focus{
+  background-image: linear-gradient( 135deg,hsl(0, 95%, 93%), hsl(0, 100%, 88%));
+  box-shadow:hsl(0, 80%, 86%) 0px 5px 15px;;
+}
+.icons{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  right:0;
+  gap:.5rem
+}
+#error{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.dlogo,#dhero,.hide{
+  display: none;
+}
+#please{
+  position: absolute;
+  left: 2rem;
+  bottom:-3.2rem;
+  font-size: 12px;
+  color: red;
+}
+@media screen and (min-width:733px){
+  .container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  body{
+    display: grid;
+    place-items: center;
+    background-image: url("bg-pattern-desktop.svg");
+  }
+  .left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-inline: clamp(3rem,5vw,12rem);
+    padding-bottom: clamp(0rem,1vw,7rem);
+    order:1;
+  }
+  .right{
+    order: 2;
+}
+#mhero,.mlogo{
+  display: none;
+}
+#dhero{
+  display: block;
+  height:100%;
+  object-fit: cover;
+}
+.dlogo{
+  display: block;
+  width: 10rem;
+  margin-bottom: clamp(0rem,2vw,2rem);
+}
+span{
+  margin-top: .4rem;
+  font-size: clamp(1rem,5vw,4rem);
+  text-align: start;
+}
+.pf{
+  padding-left: 0;
+  text-align: start;
+  font-size: 16px;
+}
+button{
+  width:6.5rem;
+}
+#we{
+  margin-top: clamp(1rem,3vw,4rem);
+}
+#email{
+  padding-block:clamp(.5rem,1.5vw,1rem);
+}
+}
+@media screen and (min-width:930px){
+  .dlogo{
+    width: 10rem;
+    margin-bottom: clamp(0rem,5vw,8rem);
+  }
+  .left{
+    padding-inline: clamp(3rem,8vw,12rem);
+    padding-bottom: clamp(0rem,5vw,7rem);
+  }
+}
+@media screen and (min-width:1200px){
+  .left{
+    padding-inline: clamp(3rem,12vw,11rem);
+  }
+}
